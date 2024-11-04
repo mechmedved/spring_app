@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="catBean" class="ru.maxima.model.Cat">
+        <constructor-arg index="0" value="cat"/>
+        <constructor-arg index="1" value="Sherlok"/>
+        <constructor-arg index="2" value="2"/>
+    </bean>
+
+    <bean id="dogBean" class="ru.maxima.model.Dog">
+        <constructor-arg index="0" value="dog"/>
+        <constructor-arg index="1" value="Mylo"/>
+        <constructor-arg index="2" value="5"/>
+    </bean>
+
+    <bean id="duckBean" class="ru.maxima.model.Duck">
+        <constructor-arg index="0" value="duck"/>
+        <constructor-arg index="1" value="Donald"/>
+        <constructor-arg index="2" value="1"/>
+    </bean>
+
+    <bean id="tigerBean" class="ru.maxima.model.Tiger">
+        <constructor-arg index="0" value="tiger"/>
+        <constructor-arg index="1" value="Sam"/>
+        <constructor-arg index="2" value="3"/>
+    </bean>
+
+    <bean id="zooBean" class="ru.maxima.model.Zoo">
+        <constructor-arg>
+            <array>
+                <ref bean="catBean"/>
+                <ref bean="dogBean"/>
+                <ref bean="duckBean"/>
+                <ref bean="tigerBean"/>
+            </array>
+        </constructor-arg>
+    </bean>
+
+</beans>
